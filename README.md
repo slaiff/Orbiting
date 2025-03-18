@@ -1,4 +1,4 @@
-# Orbiting---A Space View Simulation
+# Orbiting---A Space and Planet Viewing Environment
 
 ## Description
 This program allows users to tinker with their own uniquely designed planet which is viewed from the persepctive of an orbiting small craft. The program uses an OpenGL API written in C++, with numerous vertex and fragment shaders built in on top to provide the output, among other features such as an edge detection filter and soft blur. 
