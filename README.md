@@ -6,5 +6,6 @@ This program allows users to tinker with their own uniquely designed planet whic
 ### More info
 The C++ api code is not available here as it's not my own personal work, but all fragment and vertex shaders are available. Alongside this, the .glib file is available, for use in glMan, a program written by Mike Bailey of Oregon State University, accesible here : https://web.engr.oregonstate.edu/~mjb/glman/ . 
 
+### Sample Output
 ![image](https://github.com/user-attachments/assets/dc7928e3-922f-4ea6-8e2f-aa12691e6ca1)
 ![image](https://github.com/user-attachments/assets/344450fc-e724-4699-b534-42ea1f893d8a)
