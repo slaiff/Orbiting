@@ -9,3 +9,6 @@ The C++ api code is not available here as it's not my own personal work, but all
 ### Sample Output
 ![image](https://github.com/user-attachments/assets/dc7928e3-922f-4ea6-8e2f-aa12691e6ca1)
 ![image](https://github.com/user-attachments/assets/344450fc-e724-4699-b534-42ea1f893d8a)
+
+### Sample Usage 
+![image](https://github.com/user-attachments/assets/fc2c916d-aad8-41fc-a0a2-62e472458ae1)
