@@ -1,0 +1,90 @@
+##OpenGL GLIB
+Perspective 70.
+Background 0 0 0 
+LookAt 0 0 -6  0 0 0  0 1 0
+WindowSize 1024 1024
+
+#Program 1 - space
+Texture2D 5 stars.bmp
+
+Vertex		pattern.vert
+Fragment	pattern.frag
+Program		Space						\
+		uKa <0.2 1.0 1.5>			\
+		uKd <0.5 0.7 1.5>			\
+		uKs <1.0 1.5 2.0>			\
+		uShininess 50.0				\
+		uColorUnit 5
+Sphere	35 50 50
+
+
+#Program 2 - sun
+Texture2D 6 sun.bmp
+
+Vertex		sun.vert
+Fragment	sun.frag
+Program		Sun						\
+		uKa <0.2 0.5 0.9>			\
+		uKd <0.5 0.7 1.5>			\
+		uKs <1.0 1.5 2.0>			\
+		uShininess 50.0				\
+		uColorUnit 6
+TransformBegin
+	Translate 18 5 30
+	Sphere 5 50 50  
+TransformEnd
+
+#Program 3 - Volkaya 3 (Planet)
+
+Texture2D 7	1024 1024		#Create a null/empty texture
+RenderToTexture 7			#render/draw into texture unit 7 for future draws below
+
+Background 0 0 0
+Clear
+
+Vertex		volkaya3.vert
+Fragment	volkaya3.frag
+Program		Volkaya3					\
+		uA		<0 1. 10>					\
+		uP		<0. .25 1.>					\
+		uTol	<0. 0.5 1.0>					\
+		uAmp	<-5. -1.5 3.>				\
+		uFreq	<0. 1.0 1.5>				\
+		uAtmosphereColor { 0.01 0.01 0.01 1.0 }		\
+		uSurfaceColor {0.3 0.1 0.2 1.0 }		\
+		uNoiseAmp  <0.0 0.5 1.0>			\
+		uNoiseFreq <0.0 0.5 1.0>
+TransformBegin
+	Scale  1.1    
+	Rotate -10	0 1 0
+	Color 1.0 0.5 0.0
+	Sphere 3 50 50
+TransformEnd
+
+RenderToTexture				#Render the filled out texture, back to screen
+
+Background  0 0 0
+#Clear - what does this do?!
+
+#Program 4 - EdgeDetection
+
+Vertex		image.vert
+Fragment	image.frag
+Program		Filter uTexUnit 7	\
+            uTolerance <0.0 0.0 1.0>
+
+
+
+Background 0 0 0
+
+#Program 5 - Blur 
+
+Vertex		blur.vert
+Fragment	blur.frag
+Program		Blur uTexUnit 7		\
+			uBlurTol <0.0 1.0 5.0>
+
+TransformBegin
+	Translate -10 -5 -7
+	QuadXY 15 15
+TransformEnd
